@@ -12,22 +12,24 @@
       body {
         background-color: #caebfa;
       }
-      .container {
-        margin-top: 50px;
-      }
       .question-container {
+        margin-top: 50px;
+        margin-left: 35px;
+        margin-right: 35px;
+      }
+      .question-question-container {
         margin: 15px 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
       }
-      .hidden {
+      .question-hidden {
         display: none;
       }
       .progress-bar {
         background-color: #008700;
       }
-      .progress-percentage {
+      .quetion-progress-percentage {
         text-align: center;
         font-weight: bold;
         margin-top: 10px;
@@ -35,18 +37,22 @@
       h4 {
         color: #1e1c2e;
       }
-      .btn {
+      .question-btn {
         background-color: #008814;
+        border: none;
         color: white;
         width: 100%;
+        border-radius: 8px;
+        padding: 8px 0;
       }
-      .btn:hover {
+      .question-btn:hover {
         background-color: #008814;
         color: white;
         width: 100%;
         opacity: 0.7;
       }
-      .alert {
+      .quetion-alert {
+        padding: 15px 20px;
         margin-top: 20px;
         font-weight: bold;
         font-size: 18px;
@@ -56,12 +62,12 @@
         border-radius: 0;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       }
-      .alert-container {
+      .quetion-alert-question-container {
         display: flex;
         align-items: center;
         flex-direction: column;
       }
-      .btn-continue {
+      .question-btn-continue {
         width: 100%;
         color: white;
         font-weight: bold;
@@ -76,7 +82,7 @@
       .form-control {
         margin-top: 10px;
       }
-      .skip-container {
+      .skip-question-container {
         color: #4ea99d;
         font-weight: bold;
         margin: 35px 0;
@@ -84,15 +90,17 @@
         text-decoration-line: underline;
         text-decoration-style: solid;
       }
-      .progress-percentage {
+      .quetion-progress-percentage {
         display: contents;
         padding-bottom: 10px;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="progress-percentage" id="progress-percentage">0%</div>
+    <div class="question-container">
+      <div class="quetion-progress-percentage" id="quetion-progress-percentage">
+        0%
+      </div>
       <span style="font-weight: bold">Complete</span>
       <div class="progress mb-2">
         <div
@@ -106,47 +114,84 @@
         ></div>
       </div>
 
-      <div id="question1" class="question-container">
+      <div id="question1" class="question-question-container">
         <h4>Do You Live In The US</h4>
-        <button class="btn btn-outline-primary mt-3" onclick="nextQuestion(1)">
+        <button
+          class="question-btn question-btn-outline-primary mt-3"
+          onclick="nextQuestion(1)"
+        >
           Yes
         </button>
-        <button class="btn btn-outline-primary mt-3" onclick="nextQuestion(1)">
+        <button
+          class="question-btn question-btn-outline-primary mt-3"
+          onclick="nextQuestion(1)"
+        >
           No
         </button>
       </div>
-      <div id="question2" class="question-container hidden">
+      <div id="question2" class="question-question-container question-hidden">
         <h4>Did You Graduate From High School</h4>
-        <button class="btn btn-outline-primary mt-3" onclick="nextQuestion(2)">
+        <button
+          class="question-btn question-btn-outline-primary mt-3"
+          onclick="nextQuestion(2)"
+        >
           Yes
         </button>
-        <button class="btn btn-outline-primary mt-3" onclick="nextQuestion(2)">
+        <button
+          class="question-btn question-btn-outline-primary mt-3"
+          onclick="nextQuestion(2)"
+        >
           No
         </button>
       </div>
-      <div id="question3" class="question-container hidden">
+      <div id="question3" class="question-question-container question-hidden">
         <h4>When Would You Like To Start</h4>
-        <button class="btn btn-outline-primary mt-3" onclick="nextQuestion(3)">
+        <button
+          class="question-btn question-btn-outline-primary mt-3"
+          onclick="nextQuestion(3)"
+        >
           Within 1 Month
         </button>
-        <button class="btn btn-outline-primary mt-3" onclick="nextQuestion(3)">
+        <button
+          class="question-btn question-btn-outline-primary mt-3"
+          onclick="nextQuestion(3)"
+        >
           1 - 6 Months
         </button>
-        <button class="btn btn-outline-primary mt-3" onclick="nextQuestion(3)">
+        <button
+          class="question-btn question-btn-outline-primary mt-3"
+          onclick="nextQuestion(3)"
+        >
           Undecided
         </button>
       </div>
-      <div id="checking-message" class="alert hidden" role="alert">
+      <div
+        id="question-checking-message"
+        class="quetion-alert question-hidden"
+        role="quetion-alert"
+      >
         Checking your answers
       </div>
-      <div id="mapping-message" class="alert hidden" role="alert">
+      <div
+        id="mapping-message"
+        class="quetion-alert question-hidden"
+        role="quetion-alert"
+      >
         Matching with the best option
       </div>
-      <div id="confirm-message" class="alert hidden" role="alert">
+      <div
+        id="confirm-message"
+        class="quetion-alert question-hidden"
+        role="quetion-alert"
+      >
         Confirming eligibility
       </div>
-      <div id="completion-message" class="alert hidden" role="alert">
-        <div class="alert-container">
+      <div
+        id="completion-message"
+        class="quetion-alert question-hidden"
+        role="quetion-alert"
+      >
+        <div class="quetion-alert-question-container">
           <h4>Great! Please Enter Your Email Below:</h4>
           <input
             class="form-control form-control-lg"
@@ -155,8 +200,8 @@
             aria-label="default input example"
           />
 
-          <div class="btn-continue">Continue</div>
-          <p class="skip-container">Skip This Step</p>
+          <div class="question-btn-continue">Continue</div>
+          <p class="skip-question-container">Skip This Step</p>
         </div>
       </div>
     </div>
@@ -167,7 +212,7 @@
         document.getElementById("next-step-sound").play();
         const progressBar = document.getElementById("progress-bar");
         const progressPercentage = document.getElementById(
-          "progress-percentage"
+          "quetion-progress-percentage"
         );
         let newProgress = questionNumber * 33.33;
         const currentQuestion = document.getElementById(
@@ -177,35 +222,37 @@
           "question" + (questionNumber + 1)
         );
 
-        currentQuestion.classList.add("hidden");
+        currentQuestion.classList.add("question-hidden");
 
         if (nextQuestion) {
-          nextQuestion.classList.remove("hidden");
+          nextQuestion.classList.remove("question-hidden");
         } else {
           newProgress = 100;
           document
-            .getElementById("checking-message")
-            .classList.remove("hidden");
+            .getElementById("question-checking-message")
+            .classList.remove("question-hidden");
 
           setTimeout(() => {
-            document.getElementById("checking-message").classList.add("hidden");
+            document
+              .getElementById("question-checking-message")
+              .classList.add("question-hidden");
             document
               .getElementById("mapping-message")
-              .classList.remove("hidden");
+              .classList.remove("question-hidden");
             setTimeout(() => {
               document
                 .getElementById("mapping-message")
-                .classList.add("hidden");
+                .classList.add("question-hidden");
               document
                 .getElementById("confirm-message")
-                .classList.remove("hidden");
+                .classList.remove("question-hidden");
               setTimeout(() => {
                 document
                   .getElementById("confirm-message")
-                  .classList.add("hidden");
+                  .classList.add("question-hidden");
                 document
                   .getElementById("completion-message")
-                  .classList.remove("hidden");
+                  .classList.remove("question-hidden");
                 progressBar.style.width = newProgress + "%";
                 progressBar.setAttribute("aria-valuenow", newProgress);
                 progressPercentage.textContent = Math.round(newProgress) + "%";
